@@ -213,17 +213,7 @@ WHERE film.film_id IN
 
 
 #Q8 Customers who spent more than the average payments.
-
-select concat(last_name, ', ', first_name) as Name from sakila.customer
-where customer_id in (
-	select customer_id
-    from rental
-    where RENTAL_ID IN(
-		SELECT rental_id
-		FROM sakila.payment
-		where payment.amount > (
-			select avg(payment.amount)
-			from payment)));						
+						
 
 SELECT 
 	CONCAT(last_name, ', ', first_name) AS Customer
